@@ -1,5 +1,5 @@
 dev:
-	poetry run uvicorn app:app --reload
+	poetry run uvicorn fast_api:app --reload
 lint:
 	poetry run flake8
 install:
