@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from typing import Annotated
 from contextlib import asynccontextmanager
 
-from database import create_tables, delete_tables
+from fast_api.database import create_tables, delete_tables
 
 
 @asynccontextmanager
