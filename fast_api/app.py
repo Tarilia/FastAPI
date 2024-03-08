@@ -1,9 +1,21 @@
 from fastapi import FastAPI, Depends
 from pydantic import BaseModel
 from typing import Annotated
+from contextlib import asynccontextmanager
+
+from database import create_tables, delete_tables
 
 
-app = FastAPI()
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+   await create_tables()
+   print("База готова")
+   yield
+   await delete_tables()
+   print("База очищена")
+
+
+app = FastAPI(lifespan=lifespan)
 
 
 class TaskCreate(BaseModel):
