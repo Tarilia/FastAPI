@@ -11,3 +11,4 @@ coverage.xml
 .vscode/
 .env
 *.sqlite3
+tasks.db
