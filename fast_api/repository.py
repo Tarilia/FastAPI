@@ -1,7 +1,7 @@
 from sqlalchemy import select
 
 from fast_api.database import Task, new_session
-from fast_api.app import TaskCreate, TaskRead
+from fast_api.models import TaskCreate, TaskRead
 
 class TaskRepository:
    @classmethod
