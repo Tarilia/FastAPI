@@ -20,4 +20,4 @@ class TaskRepository:
            query = select(Task)
            result = await session.execute(query)
            task_models = result.scalars().all()
-           return tasks_models
+           return task_models
